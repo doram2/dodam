@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<br/>
+|￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣| <br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제품 상세 페이지입니다.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+|＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿| <br/>
+　&nbsp;&nbsp;&nbsp;&nbsp;　        ᕱ ᕱ  ||<br/>
+　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ･ω･ ||<br/>
+ &nbsp;&nbsp;&nbsp;&nbsp; 　         /　つΦ<br/><br/>
+ 
+
+ <form action="goodsRegist" method="post" name="frm" id="frm">
+  <input type="hidden" name="empNum" th:value="${empNum}"/><br/>
+	제품 번호: [[${dto.goodsNum}]]
+	제품 이름: [[${dto.goodsName}]]
+	제품 가격: [[${dto.goodsPrice}]]
+	제&nbsp;&nbsp;조&nbsp;&nbsp;일: [[${dto.goodsDate}]] 
+	제품 설명: [[${dto.goodsContent}]]
+	수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;량: [[${dto.goodsQty}]] 
+	제&nbsp;&nbsp;조&nbsp;&nbsp;사: [[${dto.goodsCompany}]]
+	
+</form>
+</body>
+</html>

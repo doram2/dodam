@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="application/vnd.ms-word; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%
+	response.setHeader("Content-Disposition", "attachment;filename=member.doc");
+	response.setHeader("Content-Description", "JSP Generated Data");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<table border = 1 width="500px">
+	<tr><th>이름</th><th>주소</th><th>연락처</th></tr>
+	<tr><td>김김이</td><td>남동구</td><td>010-1234-5678</td></tr>
+	<tr><td>김일이</td><td>연수구</td><td>010-9876-5432</td></tr>
+</table>
+</body>
+</html>

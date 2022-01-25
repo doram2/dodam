@@ -1,0 +1,13 @@
+package controller.member;
+
+import javax.servlet.http.HttpServletRequest;
+
+import model.DAO.MemberDAO;
+
+public class MemberDisciptController {
+	public void execute(HttpServletRequest request) {
+		String memNum = "kosa100005";
+		MemberDAO dao = new MemberDAO();
+		MemberDTO dto = dao.selectOne(memNum);
+	}
+}

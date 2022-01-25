@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+제품리스트 페이지입니다.<br/>
+
+<table border = 1>
+	<tr><td> 그 림 </td><td> 이 름 </td><td> 가 격 </td></tr>
+	<c:forEach items="${list }" var="dto">
+	<tr><td>
+		<c:forTokens items="${dto.goodsImages}" delims="`"  var="img">
+			${img }<br/>
+		</c:forTokens>
+	</td><td>이름</td><td>가격</td></tr>
+	</c:forEach>
+</table>
+
+<a href="goodsEnter.gd">제품등록</a><br/>
+</body>
+</html>
+
+<%@ page import="java.util.*, model.DTO.*" %>
+<%
+	List<GoodsDTO> list = (List<GoodsDTO>)request.getAttribute("list");
+	for(GoodsDTO dto: list){
+		out.print(dto.getGoodsImages()+"<br/>");
+		String[] images = dto.getGoodsImages().split("`");
+		int i = 0;
+		for(String img: images){
+			out.print(img+"<br/>");
+		
+		}
+	}
+%>

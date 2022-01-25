@@ -1,0 +1,9 @@
+package controller.member;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class MemberModifyController {
+	public void execute(HttpServletRequest request) {
+		
+	}
+}

@@ -1,0 +1,20 @@
+package model.DAO;
+
+public class GoodsDAO extends DataBaseInfo {
+	String sql;
+	public int autoNum() {
+		int i = 0;
+		con = getConnection();
+		sql = "select seq_num.nextval from dual";
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return i;
+		
+	}
+}

@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border = 1>
+<tr><td colspan=2></td></tr>
+<tr><td><input type="text" name="id"/></td>
+	<td rowspan=2><input type="image" src="images/img1.jpg" width="50px" height="50px"/></td>
+</tr>
+<tr><td><input type="password" name="pw"/></td></tr>
+<tr><td colspan = 2>아이디/비밀번호찾기 | 회원가입</td></tr>
+</table>
+<a href="boardList.kosa">게시글 목록</a>
+<a href="employeesList.dy">직원 목록</a>
+<a href="memberList.mem">회원리스트</a>
+</body>
+</html>

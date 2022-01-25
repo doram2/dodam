@@ -1,0 +1,13 @@
+package model.DAO;
+
+import model.DTO.MemberDTO;
+
+public class MemberDAO extends DataBaseInfo {
+	final String COLUMNS = "MEM_NUM, MEM_NAME, MEM_REGI_DATE, MEM_ID, MEM_PW, MEM_PHONE1, MEM_PHONE2, MEM_ADDR"
+			+ "MEM_EMAIL, MEM_GENDER, MEM_BIRTH";
+	public void memberInsert(MemberDTO dto) {
+		con = getConnection();
+		String sql = "insert into member(" + COLUMNS + ")"
+				+ " values()";
+	}
+}

@@ -1,0 +1,11 @@
+package model.DTO;
+
+import java.util.Date;
+
+public class MemberDTO {
+	String memNum;
+	String memName;
+	Date memRegiDate;
+	String memId;
+	
+}

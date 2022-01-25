@@ -1,0 +1,18 @@
+package controller.goods;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import model.DTO.AuthInfo;
+
+public class GoodsProController {
+	public void execute(HttpServletRequest request) {
+		String path = "/goods/upload";
+		String realPath = request.getServletContext().getRealPath(path);
+		//c:/
+		int filesize = 1024*1024*5;
+		HttpSession session = request.getSession();
+		AuthInfo authInfo = (AuthInfo)session.getAttribute("authInfo");
+		String empId = authInfo.getUserId();
+	}
+}

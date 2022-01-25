@@ -1,0 +1,19 @@
+package model.DTO;
+
+import java.security.Timestamp;
+import java.util.Date;
+
+public class MemberDTO {
+	String memNum;
+	String memName;
+	Date memRegiDate;
+	String memId;
+	String memPw;
+	String memPhone1;
+	String memPhone2;
+	String memAddr;
+	String memEmail;
+	String memGender;
+	Timestamp memBirth;
+	
+}

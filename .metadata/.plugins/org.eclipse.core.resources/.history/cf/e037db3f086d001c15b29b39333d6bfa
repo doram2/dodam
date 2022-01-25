@@ -1,0 +1,38 @@
+package model.DAO;
+
+import model.DTO.MemberDTO;
+
+public class MemberDAO extends DataBaseInfo {
+	final String COLUMNS = "MEM_NUM, MEM_NAME, MEM_REGI_DATE, MEM_ID, MEM_PW, MEM_PHONE1, MEM_PHONE2, MEM_ADDR,"
+			+ " MEM_EMAIL, MEM_GENDER, MEM_BIRTH";
+	public String numberGenerate() {
+		String num = null;
+		con = getConnection();
+		String sql = "select nvl(max(mem_num),100000)+1 from member";
+		return num;
+	}
+	
+	public void memberInsert(MemberDTO dto) {
+		con = getConnection();
+		String sql = "insert into member(" + COLUMNS + ")"
+				+ " values(?,?,?,?,?,?,?,?,?,?,?)";
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, dto.getMemNum());
+			pstmt.setString(2, dto.getMemName());
+			pstmt.setDate(3, new java.sql.Date(dto.getMemRegiDate().getTime()));
+			pstmt.setString(4,  dto.getMemId());
+			pstmt.setString(5, dto.getMemPw());
+			pstmt.setString(6, dto.getMemPhone1());
+			pstmt.setString(7, dto.getMemPhone2());
+			pstmt.setString(8, dto.getMemAddr());
+			pstmt.setString(9, dto.getMemEmail());
+			pstmt.setString(10, dto.getMemGender());
+			pstmt.setTimestamp(11, dto.getMemBirth());
+			int i = pstmt.executeUpdate();
+			System.out.println(i + "개 행이(가) 삽입되었습니다.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {close();}
+	}
+}

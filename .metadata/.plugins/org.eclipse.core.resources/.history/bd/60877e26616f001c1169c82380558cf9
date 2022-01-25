@@ -1,0 +1,19 @@
+package controller.goods;
+
+public class GoodsDAO extends DataBaseInfo {
+	String sql;
+	public int autoNum() {
+		int i = 0;
+		con = getConnection();
+		sql = "select seq_num.nextval from dual";
+		try {
+			pstmt = con.prepareStatement(sql);
+		}catch() {
+			
+		}finally {
+			close();
+		}
+		return i;
+		
+	}
+}

@@ -1,0 +1,10 @@
+package controller.goods;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class GoodsProController {
+	public void execute(HttpServletRequest request) {
+		String path = "/goods/upload";
+		String realPath = 
+	}
+}

@@ -1,0 +1,25 @@
+package springBootTest2.service.emplib;
+
+import java.io.File;
+import java.net.URLEncoder;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class FileDownService {
+	public void execute(String sfile, String ofile, HttpServletRequest request, HttpServletResponse response) {
+		String filePath = "/view/emplib";
+		String fileDir = request.getServletContext().getRealPath(filePath);
+		String originalFileName = null;
+		try {
+			originalFileName = URLEncoder.encode(ofile,"utf-8");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//						"text/html"
+		response.setContentType("application/octet-stream; charset=UTF-8");
+		response.setHeader("Content-Disposition", "attachment:filename="+originalFileName);
+		response.setHeader("Content-Transfer-Encoding", "binary");
+		File file = new File(fileDir + "/" + sfile);
+	}
+}

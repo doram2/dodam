@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내 정보 보기</title>
+</head>
+<body>
+고객 번호:
+이름:
+가입일: 
+아이디:
+연락처1:
+연락처2:
+주소:
+이메일:
+성별:
+생년월일:
+<a href="#">내 정보 수정</a>
+</body>
+</html>

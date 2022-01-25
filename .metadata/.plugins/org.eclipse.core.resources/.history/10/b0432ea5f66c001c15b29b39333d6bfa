@@ -1,0 +1,8 @@
+package controller.member;
+
+import javax.servlet.Servlet;
+import javax.servlet.http.HttpServlet;
+
+public class MemberFrontController  extends HttpServlet implements Servlet{
+
+}

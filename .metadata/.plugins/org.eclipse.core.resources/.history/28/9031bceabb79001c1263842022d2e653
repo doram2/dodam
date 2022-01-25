@@ -1,0 +1,18 @@
+package springBootTest2.command;
+
+import java.util.Date;
+import java.util.regex.Pattern;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class GoodsCommand {
+	String goodsNum;
+	String goodsName;
+	String goodsPrice;
+	@DateTimeFormat(Pattern = 'yyyy-MM-dd')
+	Date goodsDate;
+	String goodsContent;
+	Integer goodsQty;
+	String goodsCompany;
+	Integer empNum;
+}

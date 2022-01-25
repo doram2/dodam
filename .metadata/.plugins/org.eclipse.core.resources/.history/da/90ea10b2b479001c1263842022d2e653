@@ -1,0 +1,9 @@
+package springBootTest2.service.goods;
+
+import org.springframework.stereotype.Service;
+
+@Component
+@Service
+public class GoodsWriteService {
+
+}

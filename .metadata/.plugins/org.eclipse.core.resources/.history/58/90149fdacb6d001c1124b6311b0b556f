@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+내 정보<br/>
+<a href="memberDscript.mem">내 정보 보기</a><br/>
+
+</body>
+</html>

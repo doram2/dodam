@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	제품 번호: <input type="text" name="goodsNum" readonly = "readonly" value="kosa${goodsNum}"/> (자동부여) <br/>
+	제품 이름: <input type="text" name="goodsName"/><br/>
+</body>
+</html>

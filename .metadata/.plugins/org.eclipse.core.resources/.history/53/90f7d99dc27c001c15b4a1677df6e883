@@ -1,0 +1,17 @@
+package springBootTest2.service.emplib;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class FileDownService {
+	public void execute(String sfile, String ofile, HttpServletRequest request, HttpServletResponse response) {
+		String filePath = "/view/emplib";
+		String fileDir = request.getServletContext().getRealPath(filePath);
+		String originalFileName = null;
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

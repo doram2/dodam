@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	//현재접속자 수 확인
+	Integer count = (Integer)application.getAttribute("count");
+	Integer newCount;
+	if(count == null){
+		newCount = 1;
+		application.setAttribute("count", 1);
+	}
+	else{
+		newCount = count + 1; 
+		application.setAttribute("count", newCount);
+	}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>counter.jsp</title>
+</head>
+<body>
+현재 접속자 수: <%=newCount %>
+</body>
+</html>

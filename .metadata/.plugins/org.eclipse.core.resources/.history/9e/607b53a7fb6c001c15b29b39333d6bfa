@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>memberForm.jsp</title>
+</head>
+<body>
+<form action="#" method="get" name="frm" id="frm">
+고객 번호: <br/>
+고객 이름: <br/>
+고객 가입일: <br/>
+고객 아이디: <br/>
+고객 비밀번호: <br/>
+고객 비밀번호 확인: <br/>
+고객 연락처1: <br/>
+고객 연락처2: <br/>
+고객 주소: <br/>
+고객 이메일: <br/>
+</form>
+</body>
+</html>

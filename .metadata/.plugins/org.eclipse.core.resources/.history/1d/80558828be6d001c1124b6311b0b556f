@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+이름: <br/>
+아이디: <br/>
+비밀번호: <br/>
+비밀번호 확인: <br/>
+연락처1: <br/>
+연락처2: <br/>
+주소: <br/>
+이메일: <br/>
+성별: <br/>
+생년월일: <br/>
+</form>
+</body>
+</html>

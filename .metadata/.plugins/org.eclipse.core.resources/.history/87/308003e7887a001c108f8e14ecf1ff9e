@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<br/>
+|￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣| <br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제품 상세 페이지입니다.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+|＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿| <br/>
+　&nbsp;&nbsp;&nbsp;&nbsp;　        ᕱ ᕱ  ||<br/>
+　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ･ω･ ||<br/>
+ &nbsp;&nbsp;&nbsp;&nbsp; 　         /　つΦ<br/><br/>
+	제품 번호:[[${goodsDTO.goodsNum}]]<br/>
+	제품 이름:[[${goodsDTO.goodsName}]]<br/>
+	제품 가격:[[${goodsDTO.goodsPrice}]]<br/>
+	제&nbsp;&nbsp;조&nbsp;&nbsp;일:[[${goodsDTO.goodsDate}]]<br/> 
+	제품 설명:[[${goodsDTO.goodsContent}]]<br/>
+	수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;량:[[${goodsDTO.goodsQty}]]<br/> 
+	제&nbsp;&nbsp;조&nbsp;&nbsp;사:[[${goodsDTO.goodsCompany}]]<br/>
+	<br/>
+	<a th:href="@{goodsUpdate(num=${goodsDTO.goodsNum})}">제품 수정</a>
+	<a th:href="@{goodsDelete(num=${goodsDTO.goodsNum})}">제품 삭제</a>
+</body>
+</html>

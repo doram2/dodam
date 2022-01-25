@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%
+	String search = request.getParameter("search");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+검색페이지입니다.<br/>
+<form action="NewFile3.jsp" method="post" name="frm">
+	검색: <input type="search" name="search" value="<%=search%>"/><br/>
+	<input type="submit" value="검색"/>
+</form>
+</body>
+</html>

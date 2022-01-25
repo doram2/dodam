@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="Library"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="library"/>
+			<item value="libNum"/>
+			<item value="employee"/>
+			<item value="model"/>
+			<item value="libDelete"/>
+			<item value="memberDTO"/>
+			<item value="memUpdate"/>
+			<item value="회원"/>
+		</list>
+		<list key="replacehistory">
+			<item value="emplib"/>
+			<item value="goods"/>
+			<item value="dto"/>
+			<item value="고객"/>
+			<item value="Mem"/>
+			<item value="mem"/>
+			<item value="member"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,9 @@
+package model.DAO;
+
+import model.DTO.MemberDTO;
+
+public class MemberDAO extends DataBaseInfo {
+	public void memberInsert(MemberDTO dto) {
+		
+	}
+}

@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+직원등록 페이지입니다.<br/>
+<form action="#" method="get" name="frm">
+	직원번호: <input type="text" name="empNum"/><br/>
+	직원이름: <input type="text" name="empName"/><br/>
+	직원아이디: <input type="text" name="empID"/><br/>
+</form>
+</body>
+</html>

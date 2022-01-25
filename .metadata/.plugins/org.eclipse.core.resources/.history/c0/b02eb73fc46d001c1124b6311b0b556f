@@ -1,0 +1,18 @@
+package controller.member;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class MemberJoinController {
+	public void execute(HttpServletRequest request) {
+		String memName = request.getParameter("memName");
+		String memId = request.getParameter("memId");
+		String memPw = request.getParameter("memPw");
+		String memPhone1 = request.getParameter("memPhone1");
+		String memPhone2 = request.getParameter("memPhone2");
+		String memAddrString = request.getParameter("memAddrString");
+		String memEmail = request.getParameter("memEmail");
+		String memGenderString = request.getParameter("memGenderString");
+		String memBirth = request.getParameter("memBirth");
+		
+	}
+}

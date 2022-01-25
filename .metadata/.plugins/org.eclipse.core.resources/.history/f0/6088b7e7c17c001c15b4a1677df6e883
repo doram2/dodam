@@ -1,0 +1,7 @@
+package springBootTest2.service.emplib;
+
+public class FileDownService {
+	public void execute(String sfile, String ofile) {
+		
+	}
+}

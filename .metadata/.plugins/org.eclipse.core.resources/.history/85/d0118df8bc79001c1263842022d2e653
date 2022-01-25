@@ -1,0 +1,34 @@
+package springBootTest2.service.goods;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import springBootTest2.command.GoodsCommand;
+import springBootTest2.domain.GoodsDTO;
+import springBootTest2.mapper.GoodsMapper;
+
+@Component
+@Service
+public class GoodsWriteService {
+	@Autowired
+	GoodsMapper goodsMapper;
+	
+	public void execute(GoodsCommand goodsCommand) {
+		 GoodsDTO dto = new GoodsDTO();
+	      dto.setGoodsNum(goodsCommand.getGoodsNum());
+	      dto.setGoodsName(goodsCommand.getGoodsName());
+	      dto.setGoodsPrice(goodsCommand.getGoodsPrice());
+	      dto.setGoodsDate(goodsCommand.getGoodsDate());
+	      dto.setGoodsContent(goodsCommand.getGoodsContent());
+	      dto.setGoodsQty(goodsCommand.getGoodsQty());
+	      dto.setGoodsCompany(goodsCommand.getGoodsCompany());
+	      dto.setEmpNum(goodsCommand.getEmpNum());
+	      
+	      // jsp에서는 dao에게 dto를 줬잖아!
+	      // springBoot에서는 mybatis를 사용하니까 dao대신에 mapper사용 
+	      // 의존객체이므로 autowired
+	      Integer i = goodsMapper.goodsInsert(dto);
+	      System.out.println(i + "개 행이(가) 삽입되었습니다.");
+	}
+}

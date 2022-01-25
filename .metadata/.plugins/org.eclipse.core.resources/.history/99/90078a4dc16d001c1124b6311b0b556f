@@ -1,0 +1,18 @@
+package controller.member;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class MemberJoinController {
+	public void execute(HttpServletRequest request) {
+		String memName;
+		String memId;
+		String memPw;
+		String memPhone1;
+		String memPhone2;
+		String memAddrString;
+		String memEmail;
+		String memGenderString;
+		String memBirth;
+		
+	}
+}

@@ -1,0 +1,12 @@
+package model.DTO;
+
+import java.sql.Timestamp;
+
+public class GoodsDTO {
+	String goodsNum;
+	String goodsName;
+	int goodsPrice;
+	Timestamp goodsDate;
+	String goodsContent;
+	int goodsQty;
+}

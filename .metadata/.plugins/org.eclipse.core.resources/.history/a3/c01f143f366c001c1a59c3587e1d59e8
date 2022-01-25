@@ -1,0 +1,17 @@
+package controller.employee;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class EmployeeWriterController {
+	public void execute(HttpServletRequest request) {
+		String empNum = request.getParameter("empNum");
+		String empName = request.getParameter("empName");
+		String empID = request.getParameter("empID");
+		String empPw = request.getParameter("empPw");
+		String empEmail = request.getParameter("empEmail");
+		Integer empSalary = (Integer)(request.getParameter("empSalary"));
+		String empPhone = request.getParameter("empPhone");
+		
+		String empHireDate = request.getParameter("empHireDate");
+	}
+}

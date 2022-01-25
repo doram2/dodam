@@ -1,0 +1,11 @@
+package model.DAO;
+
+public class EmployeeDAO {
+	String jdbcURL;
+	String jdbcDriver;
+	
+	public EmployeeDAO() {
+		jdbcURL = "oracle.jdbc.driver.OracleDriver";
+		jdbcDriver = "jdbc:oracle:thin:@localhost:1521:xe";
+	}
+}

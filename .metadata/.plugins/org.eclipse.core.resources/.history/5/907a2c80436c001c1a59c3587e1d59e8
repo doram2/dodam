@@ -1,0 +1,48 @@
+package model.DAO;
+
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.DTO.EmployeeDTO;
+
+public class EmployeeDAO extends DataBaseInfo {
+	final String COLUMNS = "EMP_NUM, EMP_NAME, EMP_ID, EMP_PW, EMP_HIRE_DATE, EMP_EMAIL, EMP_SALARY, EMP_PHONE";
+	public List<EmployeeDTO> selectAll(){
+		List<EmployeeDTO> list = new ArrayList<EmployeeDTO>();
+		con = getConnection();
+		String sql = "select" + COLUMNS + "FROM employees order by EMP_NUM desc";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
+	
+	public void employeeInsert(EmployeeDTO dto) {
+		con = getConnection();
+		String sql = "insert into employees("+COLUMNS+")"
+				+ " values(?,?,?,?,?,?,?,?)";
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, dto.getEmpNum());
+			pstmt.setString(2, dto.getEmpName());
+			pstmt.setString(3, dto.getEmpId());
+			pstmt.setString(4, dto.getEmpPw());
+			//util.Date를 sql.Date변환
+			pstmt.setDate(5, new Date(dto.getEmpHireDate().getTime()));
+			pstmt.setString(6, dto.getEmpEmail());
+			pstmt.setInt(7, dto.getEmpSalary());
+			pstmt.setString(8, dto.getEmpPhone());
+			
+			int i = pstmt.executeUpdate();
+			System.out.println(i + "개 행이(가) 삽입되었습니다.");
+			
+		} catch (Exception e) {}
+		
+	}
+}
