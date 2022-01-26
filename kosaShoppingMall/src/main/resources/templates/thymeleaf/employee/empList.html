@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>직원 리스트</title>
+</head>
+<body>
+
+-------------------------------------------------------------------------<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;직원 리스트 페이지 입니다.<br/>
+-------------------------------------------------------------------------<br/><br/>
+
+
+<table border = 1>
+	<tr><th>직원 아이디</th><th>직원 이름</th><th>직원 주소</th><th>직원 연락처</th></tr>
+	<th:block th:each = "dto: ${list}">
+	<tr><td><a th:href="@{empInfo(id=${dto.empId})}">[[${dto.empId }]]</a></td>
+		<td><a th:href="@{empInfo(id=${dto.empId})}">[[${dto.empName}]]</td>
+		<td>[[${dto.empAddr }]]</a></td>
+		<td>[[${dto.empPhone}]]
+		</td></tr>
+	</th:block>	
+</table>
+<br/><br/>
+⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="empJoin">직원등록</a>
+
+</body>
+</html>

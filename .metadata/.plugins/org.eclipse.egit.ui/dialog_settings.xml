@@ -9,6 +9,12 @@
 		<item value="github.com"/>
 		<item value="bitbucket.org"/>
 	</list>
+	<list key="CommitDialog.authorValues">
+		<item value="user &lt;user@DESKTOP-4NMVE1B&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="user &lt;user@DESKTOP-4NMVE1B&gt;"/>
+	</list>
 	<section name="GitImportWizard">
 		<item key="GitProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
 	</section>
@@ -18,5 +24,13 @@
 		<item key="DIALOG_WIDTH" value="616"/>
 		<item key="DIALOG_HEIGHT" value="458"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
 	</section>
 </section>
