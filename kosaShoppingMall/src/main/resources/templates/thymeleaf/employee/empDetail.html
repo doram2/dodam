@@ -3,6 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <title>직원 상세 페이지</title>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#delete").click(function(){
+			$.ajax({
+	            type:"post", //키:값,
+	            url: "empDelete",
+	            data: {"empId":"[[${employeeCommand.empId}]]",
+	            		"empPw": $("#empPw").val()},
+	            datatype: "text",
+	            success : function(result){ //next페이지가 정상적으로 열렸을 때
+	            	if(result.trim() == '1'){
+	            		alert("직원이 정상적으로 삭제되었습니다.");
+	            		location.href="empList";
+	            	}else{
+	            		altert("직원이 정상적으로 삭제되지 않았습니다.")
+	            		return false;
+	            	}
+	            },
+	            error : function(){
+	            	alert("에러 발생");
+	            	return;
+	            }
+	         });
+		});
+	});
+</script>
 </head>
 <body>
 -------------------------------------------------------------------------<br/>
@@ -15,10 +43,16 @@
 직원 연락처 : [[${employeeCommand.empPhone }]]<br />
 
 <br/>
-비밀번호 : <input type="password" name="empPw" id="empPw" required="required"/><br/>
-<span th:text="${errPw}" style="color:red"></span>
+
+<form action="empModify" method="get" id="frm">
 <a th:href="empList">직원 리스트</a> | 
-<a th:href="@{empModify(id=${employeeCommand.empId }}">직원정보 수정</a> |
-<a th:href="@{empDelete(id=${employeeCommand.empId }}">직원정보 삭제</a>
+<input type="hidden" name="empId" id="empId" th:value="${employeeCommand.empId}" />
+비밀번호 : <input type="password" name="empPw" id="empPw" required="required"/>
+<span th:text="${errPw}" style="color:red"></span> <!--  -->
+<br />
+<input type="submit" value="수정"/>
+<input type="button" value="jquery삭제" id="delete">
+</form>
+
 </body>
 </html>

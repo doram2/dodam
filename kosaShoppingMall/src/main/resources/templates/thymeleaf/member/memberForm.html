@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 등록 페이지</title>
+</head>
+<body>
+<form action="memRegist" method="post" th:object=${memberCommand}>
+<table>
+<tr><th colspan = 3>회원 등록 페이지</th></tr>
+<tr><td>회원 번호</td> <td>:</td><td><input type="text" name="memberNum" readonly="readonly" th:value="${memberCommand.memberNum}"/></td></tr>
+
+<tr><td>회원 아이디</td> <td>:</td><td><input type="text" id = "memberId" name="memberId" th:value="${memberCommand.memberId}"/>
+									<span th:if="${#fields.hasErrors('memberId')}" th:errors="*{memberId}"></span></td></tr>
+
+<tr><td>회원 비밀번호</td> <td>:</td><td><input type="password" id = "memberPw" name="memberPw" th:value="${memberCommand.memberPw}"/>
+									<span th:if="${#fields.hasErrors('memberPw')}" th:errors="*{memberPw}"></span></td></tr>
+
+<tr><td>비밀번호 확인</td> <td>:</td><td><input type="password" id = "memberPwCon" name="memberPwCon" th:value="${memberCommand.memberPwCon}"/>
+									<span th:if="${#fields.hasErrors('memberPwCon')}" th:errors="*{memberPwCon}"></span></td></tr>
+
+<tr><td>회원 이름</td> <td>:</td><td><input type="text" name="memberName" th:value="${memberCommand.memberName}"/>
+									<span th:if="${#fields.hasErrors('memberName')}" th:errors="*{memberName}"></span></td></tr>
+
+<tr><td>회원 생년월일</td> <td>:</td><td><input type="date" name="memberBirth" th:value="${#dates.format(memberCommand.memberBirth,'yyyy-MM-dd')}"/>
+									<span th:if="${#fields.hasErrors('memberBirth')}" th:errors="*{memberBirth}"></span></td></tr>
+
+<tr><td>회원 주소</td> <td>:</td><td><input type="text" name="memberAddr" th:value="${memberCommand.memberAddr}"/>
+									<span th:if="${#fields.hasErrors('memberAddr')}" th:errors="*{memberAddr}"></span></td></tr>
+
+<tr><td>회원 연락처</td> <td>:</td><td><input type="tel" name="memberPhone" th:value="${memberCommand.memberPhone}"/>
+									<span th:if="${#fields.hasErrors('memberPhone')}" th:errors="*{memberPhone}"></span></td></tr>
+
+<tr><td>회원 이메일</td> <td>:</td><td><input type="text" name="memberEmail" th:value="${memberCommand.memberEmail}"/></td></tr>
+
+<tr><td>성별</td> <td>:</td><td><input type="radio" name="gender" value="F" th:checked="${memberCommand.gender=='F'}"/>여자
+							  <input type="radio" name="gender" value="M" th:checked="${memberCommand.gender=='M'}"/>남자
+							  <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span></td></tr>
+
+<td><td colspan = 3><input type="submit" value="회원 등록"/></td></tr>
+</table>
+
+</form>
+</body>
+</html>

@@ -1,7 +1,0 @@
-package springBootTest2.service.goods;
-
-import org.springframework.ui.Model;
-
-public class GoodsListService {
-	public void execute(Model model)
-}

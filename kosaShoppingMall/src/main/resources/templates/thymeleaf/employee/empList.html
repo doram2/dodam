@@ -15,8 +15,8 @@
 <table border = 1>
 	<tr><th>직원 아이디</th><th>직원 이름</th><th>직원 주소</th><th>직원 연락처</th></tr>
 	<th:block th:each = "dto: ${list}">
-	<tr><td><a th:href="@{empInfo(id=${dto.empId})}">[[${dto.empId }]]</a></td>
-		<td><a th:href="@{empInfo(id=${dto.empId})}">[[${dto.empName}]]</td>
+	<tr><td><a th:href="@{empInfo(empId=${dto.empId})}">[[${dto.empId }]]</a></td>
+		<td><a th:href="@{empInfo(empId=${dto.empId})}">[[${dto.empName}]]</td>
 		<td>[[${dto.empAddr }]]</a></td>
 		<td>[[${dto.empPhone}]]
 		</td></tr>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="memUpdate" method="post">
+<input type="hidden" name="memberPw" value="123456"/>
+<input type="hidden" name="memberPwCon" value="123456"/>
+<table>
+<tr><th colspan = 3>회원 수정 페이지</th></tr>
+<tr><td>회원 번호</td> <td>:</td><td><input type="text" name="memberNum" readonly="readonly" th:value="${memberCommand.memberNum}"/>
+
+<tr><td>회원 아이디</td> <td>:</td><td><input type="text" id = "memberId" name="memberId" th:value="${memberCommand.memberId}"/>
+									<span th:if="${#fields.hasErrors('memberId')}" th:errors="*{memberId}"></span></td></tr>
+
+<tr><td>회원 이름</td> <td>:</td><td><input type="text" name="memberName" th:value="${memberCommand.memberName}"/>
+									<span th:if="${#fields.hasErrors('memberName')}" th:errors="*{memberName}"></span></td></tr>
+
+<tr><td>회원 생년월일</td> <td>:</td><td><input type="date" name="memberBirth" th:value="${memberCommand.memberBirth}"/>
+									<span th:if="${#fields.hasErrors('memberBirth')}" th:errors="*{memberBirth}"></span></td></tr>
+
+<tr><td>회원 주소</td> <td>:</td><td><input type="text" name="memberAddr" th:value="${memberCommand.memberAddr}"/>
+									<span th:if="${#fields.hasErrors('memberAddr')}" th:errors="*{memberAddr}"></span></td></tr>
+
+<tr><td>회원 연락처</td> <td>:</td><td><input type="tel" name="memberPhone" th:value="${memberCommand.memberPhone}"/>
+									<span th:if="${#fields.hasErrors('memberPhone')}" th:errors="*{memberPhone}"></span></td></tr>
+
+<tr><td>회원 이메일</td> <td>:</td><td><input type="text" name="memberEmail" th:value="${memberCommand.memberEmail}"/></td></tr>
+									<span th:if="${#fields.hasErrors('memberEmail')}" th:errors="*{memberEmail}"></span>
+
+<td><td colspan = 3><input type="submit" value="회원 수정 완료"/></td></tr>
+</table>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kosaShoppingMall.mappers.MemberMapper">
+
+<select id="numberGenerate" resultType="string">
+select concat('kosa',nvl(max(substr(MEMBER_NUM,5)),100000) + 1) from member
+</select>
+
+<update id="memberUpdate" parameterType="memDTO">
+	update member
+	set MEMBER_NAME =#{memberName}, MEMBER_PHONE = #{memberPhone}, MEMBER_ID = #{memberId}, MEMBER_PW = #{memberPw},	
+	    MEMBER_ADDR = #{memberAddr} , MEMBER_EMAIL =#{memberEmail}, MEMBER_BIRTH = #{memberBirth} 
+	where MEMBER_NUM = #{memberNum}
+</update>
+
+<delete id="memberDelete" parameterType="string">
+	delete from member
+	where MEMBER_NUM = #{memberNum}
+</delete>
+
+<select id="selectOne" parameterType="string" resultType="memDTO">
+select MEMBER_NUM memberNum, MEMBER_ID memberId, MEMBER_PW memberPw, MEMBER_NAME memberName, MEMBER_ADDR memberAddr,
+		MEMBER_REGIST memberRegist, GENDER gender, MEMBER_PHONE memberPhone, MEMBER_BIRTH memberBirth, MEMBER_EMAIL memberEmail
+from member
+where MEMBER_NUM = #{memberNum}
+</select>
+
+<insert id="memberInsert" parameterType="memDTO">
+insert into member(MEMBER_NUM, MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_ADDR, MEMBER_REGIST, GENDER, MEMBER_PHONE,
+					MEMBER_BIRTH, MEMBER_EMAIL)<!-- MEMBER_OK -->
+values(concat('kosa',(<include refid="AutoNum"/>)),#{memberId},#{memberPw},#{memberName}, #{memberAddr}, sysdate,
+		#{gender},#{memberPhone},#{memberBirth}, #{memberEmail})
+</insert>
+
+<select id="selectAll" resultType="memDTO">
+select MEMBER_NUM memberNum, MEMBER_ID memberId, MEMBER_PW memberPw, MEMBER_NAME memberName, MEMBER_ADDR memberAddr,
+		MEMBER_REGIST memberRegist, GENDER gender, MEMBER_PHONE memberPhone, MEMBER_BIRTH memberBirth, MEMBER_EMAIL memberEmail
+from member
+order by MEMBER_NUM desc
+</select>
+
+<sql id="AutoNum">
+	select nvl(max(substr(MEMBER_NUM,5)),100000) +1 from member<!-- kosa다음부터(5번째부터)가져와서 +1 -->
+</sql>
+
+</mapper>

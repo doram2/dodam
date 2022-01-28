@@ -4,17 +4,33 @@
 <meta charset="UTF-8">
 <title>직원 등록 페이지</title>
 </head>
-<script></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+/*	$(function(){
+		$("#frm").submit(function(){
+			if($("#empPW").val() != $("empPwCon").val()){
+				alert("비밀번호와 비밀번호확인이 다릅니다.");
+				return false;
+			}
+		});
+	}); */
+</script>
 <body>
-<form action="empWrite" metdod="post" name="frm" id="frm">
+<form action="empWrite" metdod="post" id="frm" th:object="${employeeCommand}">
 <table>
 <tr><th colspan = 3>직원 등록 페이지</th></tr>
-<tr><td>아이디</td> <td>:</td><td><input type="text" name="empId" required="required"/></td></tr>
-<tr><td>비밀번호</td> <td>:</td><td><input type="password" name="empPw"/></tr>
-<tr><td>비밀번호확인</td> <td>:</td><td><input type="password" name="empPwCon"/></tr>
-<tr><td>이름</td> <td>:</td><td><input type="text" name="empName"/></tr>
-<tr><td>주소</td> <td>:</td><td><input type="text" name="empAddr"/></tr>
-<tr><td>연락처</td> <td>:</td><td><input type="tel" name="empPhone"/></tr>
+<tr><td>아이디</td> <td>:</td><td><input type="text" name="empId" th:value="${employeeCommand.empId}"/>
+								<span th:if="${#fields.hasErrors('empId')}" th:errors="*{empId}" style="color:red"></span></td></tr>
+<tr><td>비밀번호</td> <td>:</td><td><input type="password" id = "empPw" name="empPw"/>
+								<span th:if="${#fields.hasErrors('empPw')}" th:errors="*{empPw}" style="color:red"></span></td></tr>
+<tr><td>비밀번호확인</td> <td>:</td><td><input type="password" id = "empPwCon" name="empPwCon"/>
+									<span th:if="${#fields.hasErrors('empPwCon')}" th:errors="*{empPwCon}" style="color:red"></span></td></tr>
+<tr><td>이름</td> <td>:</td><td><input type="text" name="empName"/>
+								<span th:if="${#fields.hasErrors('empName')}" th:errors="*{empName}" style="color:red"></span></td></tr>
+<tr><td>주소</td> <td>:</td><td><input type="text" name="empAddr"/>
+								<span th:if="${#fields.hasErrors('empAddr')}" th:errors="*{empAddr}" style="color:red"></span></td></tr>
+<tr><td>연락처</td> <td>:</td><td><input type="tel" name="empPhone"/>
+								<span th:if="${#fields.hasErrors('empPhone')}" th:errors="*{empPhone}" style="color:red"></span></td></tr>
 <td><td colspan = 3><input type="submit" value="직원 등록"/></td></tr>
 </table>
 </form>
